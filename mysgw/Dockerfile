@@ -28,11 +28,11 @@ LABEL \
     org.label-schema.description="MySensors Gateway" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="MySensors Gateway" \
-    org.label-schema.schema-version="0.1" \
+    org.label-schema.schema-version="0.2" \
     org.label-schema.url="https://addons.community" \
-    org.label-schema.usage="https://github.com/ghiglie/hassio-addons/addon-mysgw/tree/master/README.md" \
+    org.label-schema.usage="https://github.com/schalkje/hassio-addons/addon-mysgw/tree/master/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://github.com/ghiglie/hassio-addons/addon-mysgw" \
-    org.label-schema.vendor="Marco Ghiglieri Hass.io Add-ons"
+    org.label-schema.vcs-url="https://github.com/schalkje/hassio-addons/addon-mysgw" \
+    org.label-schema.vendor="Marco Ghiglieri Hass.io Add-ons & schalkje"
 
 CMD [ "/run.sh" ]
