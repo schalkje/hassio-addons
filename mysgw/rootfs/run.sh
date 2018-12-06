@@ -1,7 +1,8 @@
 #!/usr/bin/with-contenv bash
 source /usr/lib/hassio-addons/base.sh
 
-echo "MySensors Gateway"
+echo ""
+echo "MySensors Gateway++"
 MYSGW_TYPE=$(hass.jq "${CONFIG_PATH}" ".type")
 MYSGW_TRN=$(hass.jq "${CONFIG_PATH}" ".transport")
 MQTT_SERVER=$(hass.jq "${CONFIG_PATH}" ".mqtt_server")
@@ -14,4 +15,4 @@ MQTT_OPTS="--my-mqtt-client-id=$MQTT_CLIENTID --my-controller-url-address=$MQTT_
 cd $APPDIR
 ./configure --spi-spidev-device=/dev/spidev0.0 --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE $MQTT_OPTS
 make && make install
-./bin/mysgw -d
+./bin/mysgw --deamon
