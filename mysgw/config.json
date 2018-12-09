@@ -18,22 +18,22 @@
     "5003/tcp": 5003
   },
   "options": {
-    "log_level": "info",
-	"type": "mqtt",
-	"mqtt_server": "addon_core_mosquitto.hassio",
-	"transport": "nrf24", 
-	"mqtt_clientid": "mysgw-00",
-	"mqtt_topicin": "mysensors-in",
-	"mqtt_topicout": "mysensors-out"
+    "log_level": "debug",
+    "type": "mqtt",
+    "mqtt_server": "addon_core_mosquitto.hassio",
+    "transport": "nrf24", 
+    "mqtt_clientid": "mysgw-00",
+    "mqtt_topicin": "mysensors-in",
+    "mqtt_topicout": "mysensors-out"
   },
   "schema": {
     "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
     "type": "match(^(none|ethernet|mqtt)$)",
-	"mqtt_server": "str",
-	"transport": "match(^(none|nrf24|rs485|rfm95|rfm69)$)", 
-	"mqtt_clientid": "str",
-	"mqtt_topicin": "str",
-	"mqtt_topicout": "str"
+    "mqtt_server": "str",
+    "transport": "match(^(none|nrf24|rs485|rfm95|rfm69)$)", 
+    "mqtt_clientid": "str",
+    "mqtt_topicin": "str",
+    "mqtt_topicout": "str"
   },
   "environment": {
     "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
