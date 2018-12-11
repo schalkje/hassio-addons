@@ -15,7 +15,7 @@ RUN  chmod a+x /run.sh && \
      g++ \
      git \
      && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache \
-     && git clone https://github.com/mysensors/MySensors.git --branch master $APPDIR
+     && git clone https://github.com/mysensors/MySensors.git --branch development $APPDIR
 
 # Labels
 LABEL \

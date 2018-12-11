@@ -10,12 +10,12 @@ MQTT_CLIENTID=$(hass.jq "${CONFIG_PATH}" ".mqtt_clientid")
 MQTT_TOPIC_IN=$(hass.jq "${CONFIG_PATH}" ".mqtt_topicin")
 MQTT_TOPIC_OUT=$(hass.jq "${CONFIG_PATH}" ".mqtt_topicout")
 
-MQTT_OPTS="--my-mqtt-client-id=$MQTT_CLIENTID --my-controller-url-address=$MQTT_SERVER --my-mqtt-publish-topic-prefix=$MQTT_TOPIC_OUT --my-mqtt-subscribe-topic-prefix=$MQTT_TOPIC_IN"
+MQTT_OPTS="--my-mqtt-client-id=$MQTT_CLIENTID --my-controller-ip-address=$MQTT_SERVER --my-mqtt-publish-topic-prefix=$MQTT_TOPIC_OUT --my-mqtt-subscribe-topic-prefix=$MQTT_TOPIC_IN"
 
 echo "[Info] Configure"
 cd $APPDIR
 ./configure --spi-spidev-device=/dev/spidev0.0 --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE $MQTT_OPTS
 echo "[Info] Make"
-make && make install
+sudo make && make install
 echo "[Info] Run Gateway"
-./bin/mysgw 
+sudo ./bin/mysgw 
