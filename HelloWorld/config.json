@@ -1,0 +1,16 @@
+{
+    "name": "Hello world",
+    "version": "0.10",
+    "slug": "hello_world",
+    "description": "My first real add-on!",
+    "startup": "before",
+    "boot": "auto",
+    "options": {
+      "name": "<your name>",
+      "valid": false 
+    },
+    "schema": {
+      "name": "str",
+      "valid": "bool"
+    }
+  }

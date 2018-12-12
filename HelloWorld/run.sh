@@ -1,0 +1,8 @@
+echo "Hello world!"
+echo ""
+echo "CONFIG:"
+echo "  CONFIG_PATH = '${CONFIG_PATH}'"
+echo "  APPDIR = '${APPDIR}'"
+echo ""
+NAME="$(jq --raw-output '.name' $CONFIG_PATH)"
+echo "Hello $NAME."
