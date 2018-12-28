@@ -1,8 +1,8 @@
 {
-    "name": "Example test",
-    "version": "0.1.0",
-    "slug": "example_test",
-    "description": "Example add-on by Community Hass.io Add-ons; removed url; remove url entirely; save with line endings LF",
+    "name": "Example (service)",
+    "version": "0.1.1",
+    "slug": "example_service",
+    "description": "Example add-on by Community Hass.io Add-ons; rewritten as a service",
     "startup": "application",
     "arch": [
         "armhf"
