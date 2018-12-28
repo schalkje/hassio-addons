@@ -6,17 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Changed
-- Rewrite example code to service structure
+- ...
 
-
-## [1.0.0] - 2017-06-20
+## [1.0.0] - 2018-12-2018
 ### Added
-- make file endings LF
-
+- copied from [github.com/hassio-addons/addon-example](https://github.com/hassio-addons/addon-example)
 
 ### Changed
-- ...
+- make file endings LF
+- Rewrite example code to service structure
 
 ### Removed
-- ...
-
+- removed url from configuration
