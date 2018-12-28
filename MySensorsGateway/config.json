@@ -1,12 +1,11 @@
 {
-  "name": "MySensors Gateway Add-on",
-  "version": "0.11",
-  "slug": "mysgw",
-  "description": "MySensors Gateway Add-on runs a gateway on the same pi that's runnning Hassio",
-  "url": "https://github.com/schalkje/hassio-addons",
+  "name": "MySensors Gateway Add-on (service)",
+  "version": "0.1",
+  "slug": "mysensorsgateway_service",
+  "description": "MySensors Gateway Add-on runs a gateway on the same pi that's runnning Hassio; this addon is implemented as a service",
   "arch": [
       "amd64",
-	  "i386",
+	    "i386",
       "armhf"
   ],
   "startup": "before",
