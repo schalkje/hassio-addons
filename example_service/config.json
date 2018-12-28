@@ -1,0 +1,21 @@
+{
+    "name": "Example test",
+    "version": "0.1.0",
+    "slug": "example_test",
+    "description": "Example add-on by Community Hass.io Add-ons; removed url; remove url entirely; save with line endings LF",
+    "startup": "application",
+    "arch": [
+        "armhf"
+    ],
+    "boot": "auto",
+    "hassio_api": true,
+    "hassio_role": "default",
+    "options": {
+        "log_level": "info",
+        "seconds_between_quotes": 5
+    },
+    "schema": {
+        "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
+        "seconds_between_quotes": "int(1,120)"
+    }
+  }
