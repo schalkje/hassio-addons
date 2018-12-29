@@ -37,8 +37,8 @@ echo "[Info] Make"
 ./configure $MQTT_OPTS
 echo "[Info] Make"
 make 
-echo "[Info] Make install"
-make install
+# echo "[Info] Make install"
+# make install
 echo "[Info] Run Gateway"
 # sudo ./bin/mysgw 
 exec ./bin/mysgw

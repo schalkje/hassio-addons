@@ -1,8 +1,8 @@
 {
   "name": "MySensors Gateway Add-on (service)",
-  "version": "0.6.7",
+  "version": "0.7.2",
   "slug": "mysensorsgateway_service",
-  "description": "MySensors Gateway Add-on runs a gateway on the same pi that's runnning Hassio; this addon is implemented as a service",
+  "description": "MySensors Gateway Add-on runs a gateway on the same pi that's runnning Hassio - this addon is implemented as a service",
   "arch": [
       "amd64",
 	    "i386",
@@ -20,7 +20,7 @@
     "log_level": "info",
     "type": "mqtt",
     "mqtt_server": "addon_core_mosquitto.hassio",
-    "transport": "  rf24", 
+    "transport": "rf24", 
     "mqtt_clientid": "mysgw-00",
     "mqtt_topicin": "mysensors-in",
     "mqtt_topicout": "mysensors-out"
