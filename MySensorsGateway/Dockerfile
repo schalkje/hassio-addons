@@ -24,10 +24,11 @@ RUN apk add --no-cache \
     openssh-client \
     coreutils \
     linux-headers \
+    build-base \
     wget \
     make \
     g++ \
-    && git clone https://github.com/mysensors/MySensors.git --branch development $APPDIR
+    && git clone https://github.com/schalkje/MySensors.git --branch development $APPDIR
 
 ARG BUILD_ARCH
 ARG BUILD_DATE
