@@ -16,7 +16,7 @@ RUN apk add --no-cache \
     jq curl git openssh-client \
     coreutils \
     wget \
-    && git clone https://github.com/mysensors/MySensors.git --branch master /opt/MySensors
+    && git clone https://github.com/mysensors/MySensors.git --branch master $APPDIR
 
 
 ARG BUILD_ARCH

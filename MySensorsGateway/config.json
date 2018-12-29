@@ -1,6 +1,6 @@
 {
   "name": "MySensors Gateway Add-on (service)",
-  "version": "0.6.1",
+  "version": "0.6.3",
   "slug": "mysensorsgateway_service",
   "description": "MySensors Gateway Add-on runs a gateway on the same pi that's runnning Hassio; this addon is implemented as a service",
   "arch": [
