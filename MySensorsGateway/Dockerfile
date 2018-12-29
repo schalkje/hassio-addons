@@ -1,6 +1,9 @@
 ARG BUILD_FROM
-
+# hadolint ignore=DL3006
 FROM ${BUILD_FROM}
+
+# Set shell
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ENV CONFIG_PATH=/data/options.json
 ENV APPDIR=/opt/MySensors
@@ -8,13 +11,13 @@ ENV APPDIR=/opt/MySensors
 # Copy data for add-on
 COPY rootfs /
 
-RUN  \ 
-     apt-get update && apt-get install -y --force-yes \
-     make \
-     g++ \
-     git \
-     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ~/.cache \
-     && git clone https://github.com/mysensors/MySensors.git --branch development $APPDIR
+# Setup base
+RUN apk add --no-cache \
+    jq curl git openssh-client \
+    coreutils \
+    wget \
+    && git clone https://github.com/mysensors/MySensors.git --branch master /opt/MySensors
+
 
 ARG BUILD_ARCH
 ARG BUILD_DATE
