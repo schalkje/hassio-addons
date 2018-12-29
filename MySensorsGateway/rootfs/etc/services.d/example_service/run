@@ -17,22 +17,28 @@ MQTT_TOPIC_OUT=$(hass.jq "${CONFIG_PATH}" ".mqtt_topicout")
 MQTT_OPTS="--spi-spidev-device=/dev/spidev0.0 --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE --my-mqtt-client-id=$MQTT_CLIENTID --my-controller-ip-address=$MQTT_SERVER --my-mqtt-publish-topic-prefix=$MQTT_TOPIC_OUT --my-mqtt-subscribe-topic-prefix=$MQTT_TOPIC_IN"
 
 echo ""
-echo "[Info] Configuration:"
-echo "[Info]   MYSGW_TYPE = '${MYSGW_TYPE}'"
-echo "[Info]   MYSGW_TRN = '${MYSGW_TRN}'"
-echo "[Info]   MQTT_SERVER = '${MQTT_SERVER}'"
-echo "[Info]   MQTT_CLIENTID = '${MQTT_CLIENTID}'"
-echo "[Info]   MQTT_TOPIC_IN = '${MQTT_TOPIC_IN}'"
-echo "[Info]   MQTT_TOPIC_OUT = '${MQTT_TOPIC_OUT}'"
+hass.log.info " Configuration:"
+hass.log.info "   MYSGW_TYPE = '${MYSGW_TYPE}'"
+hass.log.info "   MYSGW_TRN = '${MYSGW_TRN}'"
+hass.log.info "   MQTT_SERVER = '${MQTT_SERVER}'"
+hass.log.info "   MQTT_CLIENTID = '${MQTT_CLIENTID}'"
+hass.log.info "   MQTT_TOPIC_IN = '${MQTT_TOPIC_IN}'"
+hass.log.info "   MQTT_TOPIC_OUT = '${MQTT_TOPIC_OUT}'"
 echo ""
-echo "[Info]   MQTT_OPTS = '${MQTT_OPTS}'"
+hass.log.info "   MQTT_OPTS = '${MQTT_OPTS}'"
+
+hass.log.info 'Test hass.log.info'
+hass.log.debug 'Test hass.log.debug'
+hass.log.warning 'Test hass.log.warning'
 
 echo "[Info] Change dir to '${APPDIR}'"
 cd $APPDIR
 echo "[Info] Make"
 ./configure $MQTT_OPTS
 echo "[Info] Make"
-sudo make && make install
+make 
+echo "[Info] Make install"
+make install
 echo "[Info] Run Gateway"
 # sudo ./bin/mysgw 
-EXEC ./bin/mysgw
+exec ./bin/mysgw

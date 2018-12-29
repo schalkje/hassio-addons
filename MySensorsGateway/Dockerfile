@@ -13,9 +13,14 @@ COPY rootfs /
 
 # Setup base
 RUN apk add --no-cache \
-    jq curl git openssh-client \
+    jq \
+    curl \
+    git \
+    openssh-client \
     coreutils \
     wget \
+    make \
+    gcc \
     && git clone https://github.com/mysensors/MySensors.git --branch master $APPDIR
 
 
