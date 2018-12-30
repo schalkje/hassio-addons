@@ -39,6 +39,8 @@ echo "[Info] Make"
 make 
 # echo "[Info] Make install"
 # make install
+# echo "[Info] Gateway Help"
+# exec ./bin/mysgw --help
 echo "[Info] Run Gateway"
-# sudo ./bin/mysgw 
 exec ./bin/mysgw
+echo "[Info] Finished run Gateway"
