@@ -1,6 +1,6 @@
 {
   "name": "MySensors Gateway Add-on (service)",
-  "version": "0.7.15",
+  "version": "0.7.16",
   "slug": "mysensorsgateway_service",
   "description": "MySensors Gateway Add-on runs a gateway on the same pi that's runnning Hassio - this addon is implemented as a service",
   "arch": [
@@ -10,7 +10,16 @@
   ],
   "startup": "before",
   "boot": "auto",
-  "devices": [ "/dev/mem:/dev/mem:rw" ],
+  "hassio_api": true,
+  "hassio_role": "manager",
+  "homeassistant_api": true,
+  "host_network": true,
+  "devices": [ "/dev/mem:/dev/mem:rwm" ],
+  "map": [
+    "config:rw",
+    "share:rw",
+    "ssl"
+  ],
   "privileged": [ "SYS_RAWIO" ],
   "gpio": "true",
   "full_access": "true",
