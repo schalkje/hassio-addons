@@ -42,5 +42,6 @@ make
 # echo "[Info] Gateway Help"
 # exec ./bin/mysgw --help
 echo "[Info] Run Gateway"
+#exec ./bin/mysgw -c /config/mysensors/mysensors.conf
 exec ./bin/mysgw
 echo "[Info] Finished run Gateway"

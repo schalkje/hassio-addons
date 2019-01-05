@@ -12,4 +12,10 @@ if ! hass.directory_exists '/config/mysensors/'; then
 
     # Copy in template files
     cp /etc/mysensors/mysensors_devices.json /config/mysensors/
+
+fi
+
+# create initial config file
+if ! hass.file_exists '/config/mysensors/mysensors.conf'; then
+    cp /etc/mysensors/mysensors.conf /config/mysensors/
 fi
