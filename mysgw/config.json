@@ -2,7 +2,7 @@
   "name": "MySensors Gateway",
   "version": "0.11",
   "slug": "mysgw",
-  "description": "MySensors Gateway Add-on++",
+  "description": "MySensors Gateway Add-on++ (old experiment)",
   "url": "https://github.com/schalkje/hassio-addons",
   "arch": [
       "amd64",
