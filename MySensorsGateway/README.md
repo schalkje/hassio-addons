@@ -8,4 +8,4 @@ mysgw - MySensors Gateway. MQTT only, for now!
 ## My home
 Trying to get it running on my pi
 
-![No protection Mode](https://github.com/schalkje/hassio-addons/MySensorsGateway/MySensors%20Gateway%20-%20no%20protection%20mode.png)
+![No protection Mode](https://raw.githubusercontent.com/schalkje/hassio-addons/master/MySensorsGateway/MySensors%20Gateway%20-%20no%20protection%20mode.png)
