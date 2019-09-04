@@ -3,7 +3,7 @@
 # Starts Example (service)
 # ==============================================================================
 # shellcheck disable=SC1091
-#source /usr/lib/hassio-addons/base.sh #js:?1
+#source /usr/lib/hassio-addons/base.sh
 
 echo ""
 echo "MySensors Gateway++"
