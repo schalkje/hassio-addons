@@ -1,18 +1,18 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Starts Example (service)
 # ==============================================================================
 # shellcheck disable=SC1091
-#source /usr/lib/hassio-addons/base.sh
 
+hass.log.info "service.run - MySensors Gateway++"
 echo ""
 echo "MySensors Gateway++"
-MYSGW_TYPE=$(hass.jq "${CONFIG_PATH}" ".type")
-MYSGW_TRN=$(hass.jq "${CONFIG_PATH}" ".transport")
-MQTT_SERVER=$(hass.jq "${CONFIG_PATH}" ".mqtt_server")
-MQTT_CLIENTID=$(hass.jq "${CONFIG_PATH}" ".mqtt_clientid")
-MQTT_TOPIC_IN=$(hass.jq "${CONFIG_PATH}" ".mqtt_topicin")
-MQTT_TOPIC_OUT=$(hass.jq "${CONFIG_PATH}" ".mqtt_topicout")
+MYSGW_TYPE=$(bashio::config "type")
+MYSGW_TRN=$(bashio::config "transport")
+MQTT_SERVER=$(bashio::config "mqtt_server")
+MQTT_CLIENTID=$(bashio::config "mqtt_clientid")
+MQTT_TOPIC_IN=$(bashio::config "mqtt_topicin")
+MQTT_TOPIC_OUT=$(bashio::config "mqtt_topicout")
 
 MQTT_OPTS="--spi-spidev-device=/dev/spidev0.0 --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE --my-mqtt-client-id=$MQTT_CLIENTID --my-controller-ip-address=$MQTT_SERVER --my-mqtt-publish-topic-prefix=$MQTT_TOPIC_OUT --my-mqtt-subscribe-topic-prefix=$MQTT_TOPIC_IN"
 
