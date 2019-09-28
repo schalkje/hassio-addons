@@ -30,6 +30,7 @@ hass.log.info "   MQTT_OPTS = '${MQTT_OPTS}'"
 hass.log.info 'Test hass.log.info'
 hass.log.debug 'Test hass.log.debug'
 hass.log.warning 'Test hass.log.warning'
+hass.log.error 'Test hass.log.error'
 
 echo "[Info] Change dir to '${APPDIR}'"
 cd $APPDIR
