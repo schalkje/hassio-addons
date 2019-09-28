@@ -4,3 +4,7 @@ Copied from [github.com/hassio-addons/addon-example](https://github.com/hassio-a
 ## Goals
 As an exercize to build a service based addon for hassio
 
+
+## Dependend on
+https://github.com/hassio-addons/bashio
+

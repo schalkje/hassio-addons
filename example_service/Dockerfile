@@ -1,17 +1,14 @@
-ARG BUILD_FROM
+ARG BUILD_FROM=hassioaddons/base:4.1.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
-
-# Set shell
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Copy root filesystem
 COPY rootfs /
 
 # Setup base
 RUN apk add --no-cache \
-    coreutils=8.29-r2 \
-    wget=1.19.5-r0
+    coreutils=8.31-r0 \
+    wget=1.20.3-r0
 
 
 # Build arugments

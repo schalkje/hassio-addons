@@ -10,3 +10,7 @@ Trying to get it running on my pi
 
 It is necessary to switch off the protection mode, because of the access to the rpi ports.
 ![No protection Mode](https://raw.githubusercontent.com/schalkje/hassio-addons/master/MySensorsGateway/MySensors%20Gateway%20-%20no%20protection%20mode.png)
+
+## Dependend on
+https://github.com/hassio-addons/bashio
+

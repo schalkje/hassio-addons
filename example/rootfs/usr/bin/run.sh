@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 #
 # Community Hass.io Add-ons: Example
@@ -7,13 +7,6 @@
 # This add-on displays a random quote every X seconds.
 #
 # ==============================================================================
-set -o errexit  # Exit script when a command exits with non-zero status
-set -o errtrace # Exit on error inside any functions or sub-shells
-set -o nounset  # Exit script on use of an undefined variable
-set -o pipefail # Return exit status of the last command in the pipe that failed
-
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
 
 # ------------------------------------------------------------------------------
 # Get a random quote from quotationspage.com
@@ -92,7 +85,7 @@ display_quote() {
     if wget -q --spider http://www.quotationspage.com; then
         quote=$(get_quote_online)
     else
-        hass.log.notice \
+        bashio::log.notice \
             'Could not connect to quotationspage.com, using an offline quote'
         quote=$(get_quote_offline)
     fi
@@ -112,7 +105,7 @@ main() {
 
     bashio::log.trace "${FUNCNAME[0]}"
 
-    sleep=$(hass.config.get 'seconds_between_quotes')
+    sleep=$(bashio::config 'seconds_between_quotes')
     bashio::log.info "Seconds between each quotes is set to: ${sleep}"
 
     while true; do
