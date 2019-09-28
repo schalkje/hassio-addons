@@ -1,6 +1,6 @@
 {
   "name": "MySensors Gateway Add-on (service)",
-  "version": "0.8.10",
+  "version": "0.8.12",
   "slug": "mysensorsgateway_service",
   "description": "MySensors Gateway Add-on runs a gateway on the same pi that's runnning Hassio - this addon is implemented as a service",
   "arch": [
@@ -25,7 +25,7 @@
     "5003/tcp": 5003
   },
   "options": {
-    "log_level": "info",
+    "log_level": "trace",
     "type": "mqtt",
     "mqtt_server": "192.168.1.18",
     "transport": "rf24", 
