@@ -16,7 +16,7 @@ MQTT_CLIENTID=$(bashio::config "mqtt_clientid")
 MQTT_TOPIC_IN=$(bashio::config "mqtt_topicin")
 MQTT_TOPIC_OUT=$(bashio::config "mqtt_topicout")
 
-MQTT_OPTS='--spi-spidev-device=/dev/spidev0.0 --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE --my-mqtt-client-id=$MQTT_CLIENTID --my-controller-ip-address=$MQTT_SERVER --my-mqtt-publish-topic-prefix=$MQTT_TOPIC_OUT --my-mqtt-subscribe-topic-prefix=$MQTT_TOPIC_IN --my-config-file=/config/mysensors/mysensors.conf --my-mqtt-user=$MQTT_USER --my-mqtt-password="$MQTT_PASSWORD"'
+MQTT_OPTS="--spi-spidev-device=/dev/spidev0.0 --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE --my-mqtt-client-id=$MQTT_CLIENTID --my-controller-ip-address=$MQTT_SERVER --my-mqtt-publish-topic-prefix=$MQTT_TOPIC_OUT --my-mqtt-subscribe-topic-prefix=$MQTT_TOPIC_IN --my-config-file=/config/mysensors/mysensors.conf --my-mqtt-user=$MQTT_USER --my-mqtt-password=$MQTT_PASSWORD"
 
 bashio::log.info ""
 bashio::log.info " Configuration:"
