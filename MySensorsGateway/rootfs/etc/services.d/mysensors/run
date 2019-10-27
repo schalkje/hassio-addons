@@ -45,7 +45,7 @@ make
 # make install
 # echo "[Info] Gateway Help"
 # exec ./bin/mysgw --help
-echbashio::log.infoo "[Info] Run Gateway"
+bashio::log.info "[Info] Run Gateway"
 #exec ./bin/mysgw -c /config/mysensors/mysensors.conf
 exec ./bin/mysgw
 bashio::log.info "[Info] Finished run Gateway"
