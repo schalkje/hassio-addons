@@ -1,8 +1,7 @@
 # used base images: https://github.com/hassio-addons/addon-base
 # https://github.com/home-assistant/hassio-base
 
-ARG BUILD_FROM
-#=hassioaddons/base:5.0.1
+ARG BUILD_FROM=hassioaddons/base:5.0.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
