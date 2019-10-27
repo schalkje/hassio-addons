@@ -1,7 +1,14 @@
 # My Sensors Addon (service)
 forked from Marco Ghiglie [github.com/ghiglie/hassio-addons](https://github.com/ghiglie/hassio-addons)
 
-Addons for Hass.io
+
+[![aarch64-shield](https://img.shields.io/badge/aarch64-yes-yellow.svg)](https://shields.io/)
+[![amd64-shield](https://img.shields.io/badge/amd64-yes-yellow.svg)](https://shields.io/)
+[![armhf-shield](https://img.shields.io/badge/armhf-yes-yellow.svg)](https://shields.io/)
+[![armv7-shield](https://img.shields.io/badge/armv7-yes-green.svg)](https://github.com/Naereen/badges)
+
+[![buymeacoffee-shield](https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg)](https://shields.io/)
+
 
 mysgw - MySensors Gateway. MQTT only, for now!
 
