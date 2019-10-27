@@ -4,9 +4,9 @@
 # ==============================================================================
 # shellcheck disable=SC1091
 
-bashio::log.info "service.run - MySensors Gateway++" 
+bashio::log.info "service.run - MySensors Gateway" 
 echo ""
-echo "MySensors Gateway++"
+echo "MySensors Gateway"
 MYSGW_TYPE=$(bashio::config "type")
 MYSGW_TRN=$(bashio::config "transport")
 MQTT_SERVER=$(bashio::config "mqtt_server")
@@ -16,9 +16,9 @@ MQTT_CLIENTID=$(bashio::config "mqtt_clientid")
 MQTT_TOPIC_IN=$(bashio::config "mqtt_topicin")
 MQTT_TOPIC_OUT=$(bashio::config "mqtt_topicout")
 
-MQTT_OPTS="--spi-spidev-device=/dev/spidev0.0 --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE --my-mqtt-client-id=$MQTT_CLIENTID --my-controller-ip-address=$MQTT_SERVER --my-mqtt-publish-topic-prefix=$MQTT_TOPIC_OUT --my-mqtt-subscribe-topic-prefix=$MQTT_TOPIC_IN --my-config-file=/config/mysensors/mysensors.conf --my-mqtt-user=$MQTT_USER --my-mqtt-password=$MQTT_PASSWORD"
+MQTT_OPTS='--spi-spidev-device=/dev/spidev0.0 --my-transport=$MYSGW_TRN --my-gateway=$MYSGW_TYPE --my-mqtt-client-id=$MQTT_CLIENTID --my-controller-ip-address=$MQTT_SERVER --my-mqtt-publish-topic-prefix=$MQTT_TOPIC_OUT --my-mqtt-subscribe-topic-prefix=$MQTT_TOPIC_IN --my-config-file=/config/mysensors/mysensors.conf --my-mqtt-user=$MQTT_USER --my-mqtt-password="$MQTT_PASSWORD"'
 
-echo ""
+bashio::log.info ""
 bashio::log.info " Configuration:"
 bashio::log.info "   MYSGW_TYPE = '${MYSGW_TYPE}'"
 bashio::log.info "   MYSGW_TRN = '${MYSGW_TRN}'"
@@ -27,7 +27,7 @@ bashio::log.info "   MQTT_USER = '${MQTT_USER}'"
 bashio::log.info "   MQTT_CLIENTID = '${MQTT_CLIENTID}'"
 bashio::log.info "   MQTT_TOPIC_IN = '${MQTT_TOPIC_IN}'"
 bashio::log.info "   MQTT_TOPIC_OUT = '${MQTT_TOPIC_OUT}'"
-echo ""
+bashio::log.info ""
 bashio::log.info "   MQTT_OPTS = '${MQTT_OPTS}'"
 
 # bashio::log.info 'Test bashio::log.info'
@@ -35,17 +35,17 @@ bashio::log.info "   MQTT_OPTS = '${MQTT_OPTS}'"
 # bashio::log.warning 'Test bashio::log.warning'
 # bashio::log.error 'Test bashio::log.error'
 
-echo "[Info] Change dir to '${APPDIR}'"
+bashio::log.info "[Info] Change dir to '${APPDIR}'"
 cd $APPDIR
-echo "[Info] Make"
+bashio::log.debug "[Info] Make"
 ./configure $MQTT_OPTS
-echo "[Info] Make"
+bashio::log.debug "[Info] Make"
 make 
 # echo "[Info] Make install"
 # make install
 # echo "[Info] Gateway Help"
 # exec ./bin/mysgw --help
-echo "[Info] Run Gateway"
+echbashio::log.infoo "[Info] Run Gateway"
 #exec ./bin/mysgw -c /config/mysensors/mysensors.conf
 exec ./bin/mysgw
-echo "[Info] Finished run Gateway"
+bashio::log.info "[Info] Finished run Gateway"
