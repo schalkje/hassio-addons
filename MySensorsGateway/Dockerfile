@@ -1,12 +1,11 @@
 # used base images: https://github.com/hassio-addons/addon-base
 # https://github.com/home-assistant/hassio-base
+# https://github.com/hassio-addons/addon-example/blob/master/example/Dockerfile
 
-ARG BUILD_FROM=hassioaddons/base:5.0.1
+#ARG BUILD_FROM=alpine:3.12.1
+ARG BUILD_FROM=hassioaddons/base:8.0.3 
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
-
-# Set shell
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ENV CONFIG_PATH=/data/options.json
 ENV APPDIR=/opt/MySensors
@@ -15,14 +14,7 @@ ENV APPDIR=/opt/MySensors
 COPY rootfs /
 
 # Setup base
-# RUN apk add --no-cache \
-#     jq curl git openssh-client \
-#     coreutils \
-#     wget \
-#     && git clone https://github.com/mysensors/MySensors.git --branch master /opt/MySensors
 RUN apk add --no-cache \
-    jq \
-    curl \
     git \
     openssh-client \
     coreutils \
@@ -46,12 +38,14 @@ LABEL \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Jeroen Schalken <jeroen@schalken.net>" \
-    org.label-schema.description="MySensors Gateway Service" \
-    org.label-schema.build-date=${BUILD_DATE} \
-    org.label-schema.name="MySensors Gateway Service" \
-    org.label-schema.schema-version="0.2" \
-    org.label-schema.url="https://addons.community" \
-    org.label-schema.usage="https://github.com/schalkje/hassio-addons/addon-mysgw/tree/master/README.md" \
-    org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://github.com/schalkje/hassio-addons/addon-mysgw" \
-    org.label-schema.vendor="schalken.net"
+    org.opencontainers.image.title="MySensors Gateway Service" \
+    org.opencontainers.image.description="MySensors Gateway Service implementation" \
+    org.opencontainers.image.vendor="schalken.net" \
+    org.opencontainers.image.authors="Jeroen Schalken <jeroen@schalken.net>" \
+    org.opencontainers.image.licenses="MIT" \
+    org.opencontainers.image.url="https://addons.community" \
+    org.opencontainers.image.source="https://github.com/schalkje/hassio-addons/addon-mysgw" \
+    org.opencontainers.image.documentation="https://github.com/schalkje/hassio-addons/addon-mysgw/tree/master/README.md" \    
+    org.opencontainers.image.created=${BUILD_DATE} \
+    org.opencontainers.image.revision=${BUILD_REF} \
+    org.opencontainers.image.version=${BUILD_VERSION}
