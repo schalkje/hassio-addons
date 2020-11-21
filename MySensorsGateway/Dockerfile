@@ -19,6 +19,7 @@ RUN apk add --no-cache \
     openssh-client \
     coreutils \
     linux-headers \
+    musl \
     build-base \
     wget \
     make \
