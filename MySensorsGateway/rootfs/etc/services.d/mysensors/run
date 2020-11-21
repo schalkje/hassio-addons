@@ -27,6 +27,7 @@ bashio::log.info "   MQTT_USER = '${MQTT_USER}'"
 bashio::log.info "   MQTT_CLIENTID = '${MQTT_CLIENTID}'"
 bashio::log.info "   MQTT_TOPIC_IN = '${MQTT_TOPIC_IN}'"
 bashio::log.info "   MQTT_TOPIC_OUT = '${MQTT_TOPIC_OUT}'"
+#bashio::log.info "   APP_DIR = '${APPDIR}'"
 bashio::log.info ""
 bashio::log.info "   MQTT_OPTS = '${MQTT_OPTS}'"
 
@@ -35,8 +36,9 @@ bashio::log.info "   MQTT_OPTS = '${MQTT_OPTS}'"
 # bashio::log.warning 'Test bashio::log.warning'
 # bashio::log.error 'Test bashio::log.error'
 
-bashio::log.info "[Info] Change dir to '${APPDIR}'"
-cd $APPDIR
+# bashio::log.info "[Info] Change dir to '$APPDIR'"
+# cd $APPDIR
+cd /opt/MySensorsDIT
 bashio::log.debug "[Info] Make"
 ./configure $MQTT_OPTS
 bashio::log.debug "[Info] Make"
